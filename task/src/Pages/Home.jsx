@@ -23,6 +23,8 @@ function Home() {
   const dispatch = useDispatch();
   const { task, taskId } = useSelector((state) => state.task);
 
+
+  //get all task
   useEffect(() => {
     dispatch(getTask());
   }, [dispatch]);
@@ -32,6 +34,8 @@ function Home() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+
+  //delete task
   const handleDelete = (id) => {
     setSelectedDeleteId(id);
     setShowDeleteConfirm(true);
@@ -49,6 +53,8 @@ function Home() {
     }
   };
 
+
+  //view task
   const [showViewModal, setShowViewModal] = useState(false);
   const [selectedTask, setSelectedTask] = useState(null);
 
@@ -80,6 +86,8 @@ function Home() {
     }
   };
 
+
+  //edit task
   const handleEdit = (item) => {
     setFormData({ title: item.title || "", description: item.description || "" });
     setShowModal(true);
