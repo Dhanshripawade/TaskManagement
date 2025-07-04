@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import {
-  getTask,
-  createTask,
-  deletetask,
-  updateTask,
-  viewTask,
-} from "../Store/taskThunk.js";
+// import {
+//   getTask,
+//   createTask,
+//   deletetask,
+//   updateTask,
+//   viewTask,
+// } from "../store/taskThunk.js";
+import { getTask } from "../store/taskThunk.js";
 import { useDispatch, useSelector } from "react-redux";
 import { FaTrash, FaEye, FaEdit } from "react-icons/fa";
 
