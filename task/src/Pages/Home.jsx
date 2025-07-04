@@ -250,23 +250,23 @@ function Home() {
               </h2>
 
               <ul className="space-y-3 text-black">
-                <li className="pb-1 border-b">
+                <li className="pb-1 ">
                   <span className="font-medium">ID:</span>{" "}
                   <span className="break-all">{selectedTask._id}</span>
                 </li>
-                <li className="pb-1 border-b">
+                <li className="pb-1 ">
                   <span className="font-medium">Title:</span>{" "}
                   {selectedTask.title}
                 </li>
-                <li className="pb-1 border-b">
+                <li className="pb-1">
                   <span className="font-medium">Description:</span>{" "}
                   {selectedTask.description}
                 </li>
-                <li className="pb-1 border-b">
+                <li className="pb-1 ">
                   <span className="font-medium">Status:</span>{" "}
                   {selectedTask.status}
                 </li>
-                <li className="pb-1 border-b">
+                <li className="pb-1 ">
                   <span className="font-medium">Created At:</span>
                   {selectedTask.createdAt}
                 </li>

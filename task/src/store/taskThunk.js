@@ -2,13 +2,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-
+const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 //Create task
 export const createTask = createAsyncThunk(
     'auth/createTask',
     async (formData, thunkAPI) => {
       try {
-        const response = await axios.post('http://localhost:5000/api/tasks/', formData);
+        const response = await axios.post(`${BASE_URL}/api/tasks`, formData);
         return response.data;
       } catch (err) {
        
@@ -20,7 +20,7 @@ export const createTask = createAsyncThunk(
 //Get all task
   export const getTask = createAsyncThunk("task/getTask", async () => {
     try {
-        const response = await axios.get('http://localhost:5000/api/tasks/',);
+        const response = await axios.get(`${BASE_URL}/api/tasks`,);
         console.log(response.data);
         return response.data;
       
@@ -37,7 +37,7 @@ export const deletetask = createAsyncThunk(
       try {
         console.log("Deleating task with ID: " , id);
         
-        const response = await axios.delete(`http://localhost:5000/api/tasks/${id}`);
+        const response = await axios.delete(`${BASE_URL}/api/tasks/${id}`);
         return id;
       } catch (error) {
         return rejectWithValue(error.response?.data || error.message);
@@ -50,7 +50,7 @@ export const deletetask = createAsyncThunk(
     'task/updateTask',
     async ({ id, updatedData }, thunkAPI) => {
       try {
-        const response = await axios.put(`http://localhost:5000/api/tasks/${id}`, updatedData);
+        const response = await axios.put(`${BASE_URL}/api/tasks/${id}`, updatedData);
         return response.data;
       } catch (error) {
         return thunkAPI.rejectWithValue(error.response.data);
@@ -63,7 +63,7 @@ export const deletetask = createAsyncThunk(
   try {
     
   
-    const response = await axios.get(`http://localhost:5000/api/tasks/${id}`)
+    const response = await axios.get(`${BASE_URL}/api/tasks/${id}`)
       
     console.log(response.data);
     return response.data
