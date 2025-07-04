@@ -5,7 +5,7 @@ import {
   deletetask,
   updateTask,
   viewTask,
-} from "../Store/taskThunk";
+} from "../Store/taskThunk.js";
 import { useDispatch, useSelector } from "react-redux";
 import { FaTrash, FaEye, FaEdit } from "react-icons/fa";
 
